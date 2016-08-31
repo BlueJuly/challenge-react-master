@@ -48,7 +48,7 @@ class AddMeeting extends React.Component {
       date: this.date.toDateString(),
       time: this.time.toTimeString()
     }
-    console.log("meeting: "+ meeting);
+    // console.log("meeting: "+ meeting);
     this.setState({open : false});
     dispatch(addMeeting(meeting));
   }

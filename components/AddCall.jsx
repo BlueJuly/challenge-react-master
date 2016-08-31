@@ -25,19 +25,18 @@ class AddCall extends React.Component {
 
   handleOpen() {
 
-    console.log("get into handleOpen")
     this.setState({open: true});
 
   };
 
   handleClose() {
-    console.log("get into handleClose")
+
     this.setState({open: false});
   };
 
   handleSubmit(){
-    console.log("lead name: " + this.props.leadName)
-    console.log(this.contactName+this.contactNumber+this.boundValue)
+    // console.log("lead name: " + this.props.leadName)
+    // console.log(this.contactName+this.contactNumber+this.boundValue)
     var {dispatch} = this.props;
     var phoneCall = {
       leadName:this.props.leadName,

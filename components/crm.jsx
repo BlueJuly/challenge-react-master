@@ -41,6 +41,7 @@ const CRM = ({currentView, dispatch}) => (
 )
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
     currentView: state.get('currentView')
   }
