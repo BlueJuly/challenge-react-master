@@ -20,7 +20,7 @@ class AddCall extends React.Component {
 
     super(props);
     this.state = {open:false}
-    console.log(this.state)
+    //console.log(this.state)
   };
 
   handleOpen() {

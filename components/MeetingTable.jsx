@@ -45,7 +45,7 @@ class MeetingTable extends React.Component {
 
 
 function mapStateToProps(state) {
-	console.log("this is meeting: " + state.get('meetings'))
+	//console.log("this is meeting: " + state.get('meetings'))
   return {
     meetings: state.get('meetings')
   }

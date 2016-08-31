@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addTodo, deleteTodo, changeView } from '../actions'
+import { changeView } from '../actions'
 import LeadTable from './LeadTable'
 import CreateLead from './CreateLead';
 import AccountTable from './AccountTable'
@@ -41,7 +41,6 @@ const CRM = ({currentView, dispatch}) => (
 )
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     currentView: state.get('currentView')
   }

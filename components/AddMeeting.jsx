@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 const styles = {
   radioButton: {
     marginBottom: 16,
-  },
+  }
 };
 /**
  * Dialog content can be scrollable.
@@ -22,18 +22,18 @@ class AddMeeting extends React.Component {
 
     super(props);
     this.state = {open:false}
-    console.log(this.state)
+    //console.log(this.state)
   };
 
   handleOpen() {
 
-    console.log("get into handleOpen")
+    //console.log("get into handleOpen")
     this.setState({open: true});
 
   };
 
   handleClose() {
-    console.log("get into handleClose")
+    //console.log("get into handleClose")
     this.setState({open: false});
   };
 

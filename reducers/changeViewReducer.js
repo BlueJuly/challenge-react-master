@@ -3,12 +3,12 @@ import initialState from '../initialState'
 
 
 
-const changeViewState =Immutable.fromJS({currentView:initialState.currentView}) 
+//const changeViewState =Immutable.fromJS({currentView:initialState.currentView}) 
 
-export default (state = changeViewState, action) => {
+export default (state, action) => {
   switch(action.type) {
     case 'changeView':
-      return state.update('currentView', view => action.view)
+      return state=action.view
     default:
       return state
   }

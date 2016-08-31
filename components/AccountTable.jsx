@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 class AccountTable extends React.Component {
 
 	renderRow(account, index) {
-		console.log("account name: " + account.get('name') )
+		//console.log("account name: " + account.get('name') )
 		return (
 			<TableRow key={index}>
 				<TableRowColumn>{index + 1}</TableRowColumn>
@@ -39,7 +39,7 @@ class AccountTable extends React.Component {
 
 
 function mapStateToProps(state) {
-	console.log("this is account: " + state.get('accounts'))
+	//console.log("this is account: " + state.get('accounts'))
   return {
     accounts: state.get('accounts')
   }

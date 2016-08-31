@@ -1,6 +1,6 @@
+import Immutable from 'immutable'
 
-
-const initialState = {
+const initialState = Immutable.fromJS({
 	leads: [{name:'Xiaochuan',number:'777'}],
 	currentView: 'leads',
 	accounts:[{name:'cc',number:'789'}],
@@ -12,7 +12,7 @@ const initialState = {
 		date :'2016/08/30',
 		time: '13:00 PM'
 	}]
-};
+});
 
 
 export default initialState

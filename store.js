@@ -1,5 +1,7 @@
-import { combineReducers, createStore } from 'redux';
-import todos from './reducers/todos'
+import { createStore} from 'redux';
+import {combineReducers} from 'redux-immutable';
+import Immutable from 'immutable'
+import initialState from './initialState'
 import leadsReducer from './reducers/leadsReducer'
 import accountsReducer from './reducers/accountsReducer'
 import callsReducer from './reducers/callsReducer'
@@ -13,4 +15,4 @@ const reducers = combineReducers({
 	calls: callsReducer,
 	meetings: meetingsReducer
 })
-export default createStore(todos)
+export default createStore(reducers, initialState)

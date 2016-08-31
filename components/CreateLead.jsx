@@ -30,7 +30,8 @@ class CreadLead extends React.Component {
 			      floatingLabelFixed={true}
 			    />
 			    <br />
-			    <RaisedButton label="Save Lead" secondary={true} onClick={ ()=> dispatch(addLead({ name: this._name, number: this._number })) }/>
+			    <RaisedButton label="Save Lead" secondary={true} 
+			    onClick={ ()=> {dispatch(addLead({ name: this._name, number: this._number })); dispatch(changeView('leads')) }}/>
 			  </div>
 		);
 	}
