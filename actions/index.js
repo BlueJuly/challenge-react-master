@@ -1,4 +1,5 @@
 
+import 'whatwg-fetch'
 export function changeView(view) {
 	return {
 		type: 'changeView',
@@ -31,5 +32,17 @@ export function addMeeting(meeting){
 	return{
 		type:'addMeeting',
 		meeting
+	}
+}
+export function addTile(meeting){
+	return{
+		type:'addTile',
+		tile
+	}
+}
+export function showTiles(meeting){
+	return{
+		type:'showTiles',
+		tiles
 	}
 }

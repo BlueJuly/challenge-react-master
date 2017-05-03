@@ -40,7 +40,7 @@ class CallTable extends React.Component {
 
 
 function mapStateToProps(state) {
-	//console.log("this is call: " + state.get('calls'))
+	console.log("this is call: " + state.calls)
   return {
     calls: state.get('calls')
   }

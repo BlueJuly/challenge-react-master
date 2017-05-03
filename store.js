@@ -1,7 +1,10 @@
-import { createStore} from 'redux';
+import { applyMiddleware, createStore} from 'redux';
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
 import {combineReducers} from 'redux-immutable';
 import Immutable from 'immutable'
 import initialState from './initialState'
+import pagesReducer from './reducers/pagesReducer'
 import leadsReducer from './reducers/leadsReducer'
 import accountsReducer from './reducers/accountsReducer'
 import callsReducer from './reducers/callsReducer'
@@ -13,6 +16,7 @@ const reducers = combineReducers({
 	currentView: changeViewReducer,
 	accounts: accountsReducer,
 	calls: callsReducer,
-	meetings: meetingsReducer
+	meetings: meetingsReducer,
+	pages: pagesReducer
 })
-export default createStore(reducers, initialState)
+export default createStore(reducers, initialState,applyMiddleware(thunk,logger))
