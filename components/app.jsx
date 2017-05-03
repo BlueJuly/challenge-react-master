@@ -6,11 +6,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from '../store'
 import CRM from './crm'
 import SinglePage from './SinglePage'
-import pagesAction from "../actions/pagesAction";
+import initPagesAction from "../actions/pagesAction";
 var injectTapEventPlugin = require("react-tap-event-plugin");
+
 injectTapEventPlugin();
 
 let reactElement = document.getElementById('react')
+
 render(
   <Provider store={store}>
   	<MuiThemeProvider>

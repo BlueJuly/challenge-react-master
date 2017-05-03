@@ -33,24 +33,23 @@ function fetchTitles() {
 			return response.json()
 		})
 		.then(function(json) {
-			var pagesData = []
+			var tilesData = []
 			var singlePage = json.result[0];
 			var tiles = singlePage.TileDescriptions;
 			tiles.forEach(function(tile) {
-				pagesData.push({
+				tilesData.push({
 					img: 'data:image/png;base64,' + tile.sImage64,
 					title: tile.text
 				});
 			});
-			console.log(pagesData)
-			return pagesData;
+			return tilesData;
 		});
 }
 
-export default function initPagesAction() {
+export function initAction() {
 	return (dispatch) => {
-		return fetchTitles().then(function(pagesData) {
-			dispatch({ type: "initTiles", pages: pagesData  });
+		return fetchTitles().then(function(tilesData) {
+			dispatch({ type: "addTiles", tiles: tilesData  });
 		});
 	};
 }

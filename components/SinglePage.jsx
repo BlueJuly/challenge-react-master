@@ -24,7 +24,7 @@ const styles = {
 /**
  * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
  */
-const GridListExampleSimple = (pagesData) => (
+const GridListExampleSimple = ({pagesData}) => (
   <div style={styles.root}>
     <GridList
       cols={4}
