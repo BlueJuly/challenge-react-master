@@ -7,10 +7,10 @@ import initialState from '../initialState'
 export default (state, action) => {
   switch(action.type) {
     case 'addTile':
-    	console.log(" "+action.type + action.tile)
-      return state.push(Immutable.fromJS(action.tile))
-    case 'showTiles':
-      return state=action.tiles
+    	console.log(" "+action.type + action.pages)
+      return state.push(Immutable.fromJS(action.pages))
+    case 'initTiles':
+      return state=action.pages
     default:
       return state
   }

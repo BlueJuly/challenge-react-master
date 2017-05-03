@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from '../store'
 import CRM from './crm'
 import SinglePage from './SinglePage'
+import pagesAction from "../actions/pagesAction";
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
@@ -19,32 +20,6 @@ render(
   reactElement
 )
 
-// fetch('https://server-qa.mozzazcare.com/rpc.ashx', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//   	"jsonrpc":"2.0",
-//   	"method":"GetPageList",
-//   	"params":{
-//   		"ClientId":58204,
-//   		"apiVersion":"1.14",
-//   		"appIdentifier":"MCA",
-//   		"applicationVersion":"2.5",
-//   		"buildNo":"0.0.0",
-//   		"requestType":"app",
-//   		"source":"Mozzaz Care",
-//   		"CID":58204,
-//   		"Auth":"31f0a022-22b8-446a-816c-55e232fdcbb4"
-//   	},
-//   	"id":"27"})
-// })
-// .then(function(response) {
-//     return response.json()
-//   }).then(function(json) {
-//     console.log('parsed json', json.result)
-//   }).catch(function(ex) {
-//     console.log('parsing failed', ex)
-//   })
+store.dispatch(initPagesAction());
+
 
