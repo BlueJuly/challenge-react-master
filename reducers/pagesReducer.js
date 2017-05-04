@@ -10,6 +10,7 @@ export default (state, action) => {
     	console.log(" "+action.type + action.pages)
       return state.push(Immutable.fromJS(action.pages))
     case 'initTiles':
+      console.log('state in reducer:~~~~~~',state)
       return state=action.pages
     default:
       return state

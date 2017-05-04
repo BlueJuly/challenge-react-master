@@ -7,6 +7,8 @@ import Subheader from 'material-ui/Subheader';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import ContentRemove from 'material-ui/svg-icons/content/remove';
+import initPagesAction from "../actions/pagesAction";
+import store from '../store';
 const styles = {
   root: {
     display: 'flex',
@@ -24,7 +26,22 @@ const styles = {
 /**
  * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
  */
-const GridListExampleSimple = ({pagesData}) => (
+const GridListExampleSimple = ({singlePage, dispatch}) => {
+
+  // componentDidMount() {
+  //   store.dispatch(initPagesAction());
+  // }
+  console.log('dispatch',dispatch);
+  var pagesData = [];
+  var tiles = singlePage.TileDescriptions;
+      tiles && tiles.forEach(function(tile) {
+       pagesData.push({
+         img: 'data:image/png;base64,' + tile.sImage64,
+         title: tile.Text
+       });
+      });
+
+  return (
   <div style={styles.root}>
     <GridList
       cols={4}
@@ -44,10 +61,11 @@ const GridListExampleSimple = ({pagesData}) => (
       ))}
     </GridList>
   </div>
-);
+)};
 function mapStateToProps(state) {
+  //console.log('state',state)
   return {
-    pagesData:state.get('pages')
+    singlePage:state.get('pages')
   }
 }
 

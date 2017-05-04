@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
 
-function fetchTitles() {
+export function fetchTiles() {
 	return fetch('https://server-qa.mozzazcare.com/rpc.ashx', {
 			method: 'POST',
 			headers: {
@@ -35,22 +35,22 @@ function fetchTitles() {
 		.then(function(json) {
 			var pagesData = []
 			var singlePage = json.result[0];
-			var tiles = singlePage.TileDescriptions;
-			tiles.forEach(function(tile) {
-				pagesData.push({
-					img: 'data:image/png;base64,' + tile.sImage64,
-					title: tile.text
-				});
-			});
-			console.log(pagesData)
-			return pagesData;
+			// var tiles = singlePage.TileDescriptions;
+			// tiles.forEach(function(tile) {
+			// 	pagesData.push({
+			// 		img: 'data:image/png;base64,' + tile.sImage64,
+			// 		title: tile.Text
+			// 	});
+			// });
+			//console.log(singlePage)
+			return singlePage;
 		});
 }
 
 export default function initPagesAction() {
 	return (dispatch) => {
-		return fetchTitles().then(function(pagesData) {
-			dispatch({ type: "initTiles", pages: pagesData  });
+		return fetchTiles().then(function(singlePage) {
+			dispatch({ type: "initTiles", pages: singlePage  });
 		});
 	};
 }
