@@ -35,22 +35,15 @@ export function fetchTiles() {
 		.then(function(json) {
 			var pagesData = []
 			var singlePage = json.result[0];
-			// var tiles = singlePage.TileDescriptions;
-			// tiles.forEach(function(tile) {
-			// 	pagesData.push({
-			// 		img: 'data:image/png;base64,' + tile.sImage64,
-			// 		title: tile.Text
-			// 	});
-			// });
-			//console.log(singlePage)
 			return singlePage;
 		});
 }
 
 export default function initPagesAction() {
+	//dispatch({type:'FETCH_PAGE'});
 	return (dispatch) => {
 		return fetchTiles().then(function(singlePage) {
-			dispatch({ type: "initTiles", pages: singlePage  });
+			dispatch({ type: "initTiles", page: singlePage  });
 		});
 	};
 }

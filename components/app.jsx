@@ -1,11 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import 'whatwg-fetch'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from '../store'
-import CRM from './crm'
 import SinglePage from './SinglePage'
+import PageCard from './PageCard'
 import initPagesAction from "../actions/pagesAction";
 var injectTapEventPlugin = require("react-tap-event-plugin");
 
@@ -16,7 +15,10 @@ let reactElement = document.getElementById('react')
 render(
   <Provider store={store}>
   	<MuiThemeProvider>
+  	 <div>
+  		<PageCard />
     	<SinglePage />
+     </div>
     </MuiThemeProvider>
   </Provider>,
   reactElement

@@ -7,11 +7,11 @@ import initialState from '../initialState'
 export default (state, action) => {
   switch(action.type) {
     case 'addTile':
-    	console.log(" "+action.type + action.pages)
-      return state.push(Immutable.fromJS(action.pages))
+    	//console.log(" "+action.type + action.pages)
+      return state.push(Immutable.fromJS(action.page))
     case 'initTiles':
-      console.log('state in reducer:~~~~~~',state)
-      return state=action.pages
+      //console.log('state in reducer:~~~~~~',state)
+      return state=action.page
     default:
       return state
   }
